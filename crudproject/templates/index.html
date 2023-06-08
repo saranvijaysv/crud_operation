@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="banner">
+                <div class="banner-text">
+                    <h1>SIMPLE CRUD OPERATION</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-container">
+  <div class="row">
+    <div class="col-md-12">
+    <div class="col-md-6 mx-auto">
+     
+    <form method="post" class="p-3 shadow">
+      {% csrf_token %}
+     <div class="mb-3">
+     <label for="exampleFormControlInput1" class="form-label">SL NO:</label>
+     <input type="text" class="form-control" name="slno" placeholder="">
+     </div>
+    <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Item Name:</label>
+    <input type="text" class="form-control" name="item"></input>
+     </div>
+     <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Description:</label>
+    <input type="text" class="form-control" name="desc"></input>
+     </div><br>
+     <button class="btn btn-success" type="submit">Create</button>
+     </form>
+     
+     </div>
+         
+   
+    </div>
+  </div>
+</div><br>
+
+<div class="container">
+ <div class="row">
+  <div class="col-md-12">
+   <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Item Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+  {% for i in item %}
+  <tbody>
+    <tr>
+      <th scope="row">{{i.num}}</th>
+      <td>{{i.name}}</td>
+      <td>{{i.description}}</td>
+      <td><a class="btn btn-warning" href="{% url 'crudapp:update' i.id %}">Update</a> <a class="btn btn-danger" href="{% url 'crudapp:delete' i.id %}">Delete</a></td>
+      
+    </tr>
+  </tbody>
+  {% endfor %}
+  </table>
+   
+  </div>
+ </div>
+</div>
+
+
+   
+  
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" >
+      <form method="post" action="">
+        {% csrf_token %}
+        <p><b><br>Are you sure to delete the item?</b></p>
+        <p>(make sure you have completed the item before deleting!)</p>
+        <button style="color:red" type="submit" >Delete</button>
+</form>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

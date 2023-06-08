@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\crudapp",
+    "\\crudapp\\migrations",
+    "\\crudproject",
+    "\\static",
+    "\\templates"
+  ],
+  "SelectedNode": "\\crudapp\\views.py",
+  "PreviewInSolutionExplorer": false
+}
